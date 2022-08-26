@@ -1,16 +1,14 @@
 import React from 'react'
 import {Routes,Route} from "react-router-dom"
-import { FavouriteFood } from './FavouriteFood'
-import { FoodList } from './FoodList'
-import { SingleItem } from './SingleItem'
+import { MenuList } from './MenuList'
+import { Item } from './Item'
 
 export const Routess = () => {
   return (
     <div>
     <Routes>
-        <Route path="/" element={<FoodList/>}></Route>
-        <Route path="/:Id" element={<SingleItem/>}></Route>
-        <Route path="/fav" element={<FavouriteFood/>}></Route>
+        <Route path="/" element={<MenuList/>}></Route>
+        <Route path="/:Id" element={<Item/>}></Route>
     </Routes>
     </div>
   )
