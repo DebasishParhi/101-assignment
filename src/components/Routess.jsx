@@ -9,7 +9,7 @@ export const Routess = () => {
     <div>
     <Routes>
         <Route path="/" element={<FoodList/>}></Route>
-        <Route path="/:code" element={<SingleItem/>}></Route>
+        <Route path="/:Id" element={<SingleItem/>}></Route>
         <Route path="/fav" element={<FavouriteFood/>}></Route>
     </Routes>
     </div>

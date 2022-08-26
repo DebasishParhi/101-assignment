@@ -20,3 +20,9 @@ td a{
     color:blue;
     text-decoration: underline;
 }
+.heading{
+    background-color: blue;
+    width: 10%;
+    margin-left: 45%;
+    color: white;
+}

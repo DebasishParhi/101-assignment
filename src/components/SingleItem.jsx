@@ -23,15 +23,15 @@ import { FavouriteFood } from './FavouriteFood'
 export const SingleItem = () => {
     const [items, setItem] = useState(data)
     const [store, setStore] = useState({})
-    const { code } = useParams()
+    const { Id } = useParams()
     const [fav,setFav]=useState([])
 
     let singleProduct;
     useEffect(() => {
-        filtering(items, code)
+        filtering(items, Id)
     }, [singleProduct])
-    function filtering(items, code) {
-        singleProduct = items.find(e => e.code == code)
+    function filtering(items, Id) {
+        singleProduct = items.find(e => e.Id == Id)
         setStore(singleProduct)
     }
     // console.log(store)
@@ -44,7 +44,7 @@ export const SingleItem = () => {
     return (
         <div>
             <Box>
-                <SimpleGrid minChildWidth='100px' style={{ margin: "20px" }} spacing='20px' key={store.code}>
+                <SimpleGrid minChildWidth='100px' style={{ margin: "20px" }} spacing='20px' key={store.Id}>
                     <Box className='img'>
                         <Center>
                             <img src={require("../icon.png")} alt="" />
@@ -52,7 +52,7 @@ export const SingleItem = () => {
                     </Box>
                     <Box className='product'>
                         <Center>
-                            <p>{store.product_name} {`(${store.generic_name})`}</p>
+                            <p>{store.Menu_Items} {`(${store.Menu_Category})`}</p>
                         </Center>
                     </Box>
                 </SimpleGrid>
@@ -62,57 +62,47 @@ export const SingleItem = () => {
 
             <div>
                 <table>
+                    
+                 
                     <tr>
                         <thead>
-                            <th>url</th>
-                            <td><a href={`${store.url}`}>link</a></td>
+                            <th>Menu_Items</th>
+                            <td>{store.Menu_Items}</td>
                         </thead>
                     </tr>
                     <tr>
                         <thead>
-                            <th>conteiner</th>
-                            <td>{store.packaging}</td>
+                            <th>Energy_kCal</th>
+                            <td>{store.Energy_kCal}</td>
                         </thead>
                     </tr>
                     <tr>
                         <thead>
-                            <th>conteiner</th>
-                            <td>{store.packaging}</td>
+                            <th>Protein_g</th>
+                            <td>{store.Protein_g}</td>
                         </thead>
                     </tr>
                     <tr>
                         <thead>
-                            <th>serving_size</th>
-                            <td>{store.serving_size}</td>
+                            <th>Total_fat_g</th>
+                            <td>{store.Total_fat_g}</td>
                         </thead>
                     </tr>
                     <tr>
                         <thead>
-                            <th>energy_100g</th>
-                            <td>{store.energy_100g}</td>
-                        </thead>
-                    </tr>
-                    <tr>
-                        <thead>
-                            <th>fat_100g</th>
-                            <td>{store.fat_100g}</td>
-                        </thead>
-                    </tr>
-                    <tr>
-                        <thead>
-                            <th>energy_from_fat_100g</th>
-                            <td>{store.energy_from_fat_100g}</td>
+                            <th>Sodium_mg</th>
+                            <td>{store.Sodium_mg}</td>
                         </thead>
                     </tr>
                 </table>
             </div>
-            <Center style={{ marginTop: "40px",display:"flex",gap:"30px" }}>
+            <Center style={{ marginTop: "41px",display:"flex",gap:"25px" }}>
                 
                     <Box>
-                    <Link to="/"><Button style={{ backgroundColor: "rgb(161,195,153)" }}>Back</Button></Link>
+                    <Link to="/"><Button style={{ backgroundColor: "rgb(100,50,249)" }}>Back</Button></Link>
                     </Box>
                 <Box>
-                    <Button style={{ backgroundColor: "rgb(161,195,153)" }} onClick={favouriteFood}>Add to Favourite</Button>
+                    <Button style={{ backgroundColor: "rgb(100,50,249)" }} onClick={favouriteFood}>Add to Favourite</Button>
                 </Box>
               
             </Center>
