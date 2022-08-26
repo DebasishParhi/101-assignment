@@ -21,17 +21,14 @@ export const MenuList = () => {
 
     return (
         <div style={{backgroundColor:"aqua"}}>
-            <Heading className='heading' style={{padding:"2px"}} >FoodList</Heading>
+            <Heading className='heading' style={{padding:"2px", borderRadius:"3px" ,color:"rgb(192,147,108)" , marginTop:"2px"}} >FoodList</Heading>
          
 
             {data.map((e) => {
                 return (
                     <Box key={e.Id}>
-                        <Link to={`/${e.Id}`}><SimpleGrid minChildWidth='80px'style={{margin:"10px"}}>
+                        <Link to={`/${e.Id}`}><SimpleGrid minChildWidth=''style={{margin:"10px"}}>
                             <Box className='img'>
-                                <Center>
-                                    <img src={require("../icon.png")} alt="" />
-                                </Center>
                             </Box>
                             <Box className='product'>
                                 <Center>

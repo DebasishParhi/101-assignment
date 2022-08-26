@@ -37,11 +37,7 @@ export const Item = () => {
         <div>
             <Box>
                 <SimpleGrid minChildWidth='100px' style={{ margin: "20px" }} spacing='20px' key={menu.Id}>
-                    <Box className='img'>
-                        <Center>
-                            <img src={require("../icon.png")} alt="" />
-                        </Center>
-                    </Box>
+                   
                     <Box className='product'>
                         <Center>
                             <p>{menu.Menu_Items} {`(${menu.Menu_Category})`}</p>
